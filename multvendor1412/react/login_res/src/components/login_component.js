@@ -99,7 +99,7 @@ export default class Login extends Component {
         <div className="backgroundLogin">
           <div className="formbox">
             {/* Left Side Slider */}
-            <div className="imagesignup col-md-6">
+           {/*  <div className="imagesignup col-md-6">
               <Slider {...sliderSettings}>
                 <div>
                   <img src={loginSlider1} alt="Slide 1" className="slider-image" />
@@ -108,10 +108,10 @@ export default class Login extends Component {
                   <img src={loginSlider2} alt="Slide 2" className="slider-image" />
                 </div>
               </Slider>
-            </div>
+            </div>*/}
 
             {/* Right Side Form */}
-            <div className="form-container col-md-6">
+            <div className="form-container ">
               <h3 className="login-title text-center">Login</h3>
               {this.state.error && <div className="alert alert-danger">{this.state.error}</div>}
               <form onSubmit={this.handleSubmit}>
@@ -151,7 +151,7 @@ export default class Login extends Component {
                 </div>
               </form>
               <p className="text-center mt-3">
-                Don't have an account? <Link to="/vendor/Signup">Create Account</Link>
+                Don't have an account? <Link to="/Signup">Create Account</Link>
               </p>
             </div>
           </div>

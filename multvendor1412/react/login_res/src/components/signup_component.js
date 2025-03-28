@@ -177,7 +177,7 @@ export default class SignUp extends Component {
             <form onSubmit={this.handleSubmit} className='formbox'>
              
              
-             <div className="form-container signupform col-sm-6">
+             <div className="form-container signupform ">
               <h3 className='mt-2 signup-title'>Signup</h3>
 
   <div className="mb-3 input-group">
@@ -253,7 +253,7 @@ export default class SignUp extends Component {
   </p>
 </div>
 
-              <div className="imagesignup col-sm-6 signupdot">
+            {/*  <div className="imagesignup col-sm-6 signupdot">
               <Slider {...sliderSettings}>
                 <div>
                   <img src={Signupslider1} alt="Slide 1" className="slider-image" />
@@ -267,7 +267,7 @@ export default class SignUp extends Component {
                 </div>
               </Slider>
               
-              </div>
+              </div>*/}
              
             </form>
           ) : (

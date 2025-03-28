@@ -124,15 +124,15 @@ const AlldetailsVendor = () => {
           <h3 className="title-vendorInfo">Dashboard</h3>
           {error && <p className="error">{error}</p>}
           <div className="row">
-            <div className="col-sm-6 vendordashboard-col">
+            <div className="col-sm-6 vendordashboard-col" style={{background:"#fff5d9"}}>
               <h6>Total Products</h6>
               <h2>{productCount}</h2>
             </div>
-            <div className="col-sm-6 vendordashboard-col">
+            <div className="col-sm-6 vendordashboard-col"  style={{background:"#d9f8ff"}}>
               <h6>Approved Products</h6>
               <h2>{approvedProductCount}</h2>
             </div>
-            <div className="col-sm-6 vendordashboard-col">
+            <div className="col-sm-6 vendordashboard-col" style={{background:"#ffd9d9"}}>
               <h6>Rejected Products</h6>
               <h2>{rejectProductCount}</h2>
             </div>

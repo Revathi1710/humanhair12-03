@@ -54,11 +54,11 @@ margin: 10px;
 height: 120px;
 }
 .vendordashboard-col{
-    width: 32%;
-    background: #e2c6c6;
+    width: 31%;
+    background: #d9f8ff;
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 30px;
-    margin: 5px;
+    margin: 10px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
