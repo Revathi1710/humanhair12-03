@@ -156,7 +156,7 @@ const ProductView = () => {
                   <s>₹{product.originalPrice}</s>
                 </span>
                 <p className="des mt-2">{product.smalldescription}</p><br/>
-                <div className='d-flex align-items-center'>
+                <div className='d-flex align-items-center increase-sendbtn'>
                 <div className="">
              
                 <div className="d-flex align-items-center">
@@ -185,14 +185,7 @@ const ProductView = () => {
             </div>
                 </div>
              
-              <div className='product-related mt-3 px-3'>
-        <h3 className='productrecent'>Related Products </h3>
-        <RelatedProduct categoryId={product.category} productId={product._id}/> 
-      </div>
-      <div className='product-related mt-3 px-3'>
-        <h3 className='productrecent'>More Product From This seller</h3>
-         <MoreSellerProduct  vendorId={product.vendorId._id} productId={product._id} /> 
-      </div> </div>
+             </div>
             </div>
             <div className="col-md-3 sellerDetails">
               
@@ -227,7 +220,14 @@ const ProductView = () => {
         ) : (
           <p>Product not found.</p>
         )}
-
+  <div className='product-related mt-3 px-3'>
+        <h3 className='productrecent'>Related Products </h3>
+        <RelatedProduct categoryId={product.category} productId={product._id}/> 
+      </div>
+      <div className='product-related mt-3 px-3'>
+        <h3 className='productrecent'>More Product From This seller</h3>
+         <MoreSellerProduct  vendorId={product.vendorId._id} productId={product._id} /> 
+      </div>
         {/* Tab Navigation 
         <div className='overview'>
         <div className="tabs">

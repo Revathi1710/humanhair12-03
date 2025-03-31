@@ -139,55 +139,96 @@ position: relative;
 .mobiles-vendor-sidebar{
   display: none;
 }
+/*all product */
+.product-container{
+  background-color: white;
+  padding: 20px 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 
 @media only screen and (max-width: 768px){
-  .desktop-vendor-sidebar{
-    display: none;
-  }
-
-  .vendor-sidebarmobile-menu {
-    display: block;
-    text-align: left;
+  /* Hide desktop sidebar */
+.desktop-vendor-sidebar {
+  display: none;
 }
+
+/* Mobile Menu Button */
+.vendor-sidebarmobile-menu {
+  display: block;
+  text-align: left;
+}
+
 .usermenu-bar-vendor {
-  /* position: absolute; */
   background: rgb(129, 149, 165);
   border-radius: 50%;
   padding: 5px;
+  cursor: pointer;
 }
-.mobiles-vendor-sidebar{
-  display: block;
-}
-/* Sidebar container */
+
+/* Sidebar Overlay (Full Screen Background) */
 .mobiles-vendor-sidebar {
   position: fixed;
-  left: -250px; /* Initially hidden */
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: left 0.3s ease-in-out;
-  z-index: 1000;
-  padding-top: 0px;
-}
-.overlay{
-  background: white;
-  width: 250px;
-  height: 100%;
+  z-index: 999;
+  display: none; /* Initially Hidden */
 }
 
-/* Show sidebar when active */
-.mobiles-vendor-sidebar.active {
+/* Sidebar Container */
+.overlay {
+  position: fixed;
+  background: white;
+  top: 0;
   left: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100%;
+  border: 1px solid #ddd;
+  transform: translateX(-100%); /* Initially hidden */
+  transition: transform 0.3s ease-in-out;
+  z-index: 9999;
 }
+
+/* Show Sidebar when Active */
+.mobiles-vendor-sidebar.active {
+  display: block;
+}
+
+.mobiles-vendor-sidebar.active .overlay {
+  transform: translateX(0);
+}
+
+/* Sidebar List Items */
 .list {
   background-color: white;
   padding: 8px;
   text-align: left;
-  margin: px;
   box-shadow: none;
 }
+
+/* Close Button */
+.mobileclose-btn {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 10px;
 }
 
+.closebtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.topic{
+  width:90% !important;
+}
+  .iconsbusiness {
+    width: 20%;
+  }
+
+}
 

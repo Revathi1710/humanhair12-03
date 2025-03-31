@@ -107,7 +107,7 @@ const RelatedProduct = ({ categoryId, productId }) => {
       <div className="row">
         {products.map((product, index) => (
           <div key={index} className="col-lg-2 col-md-4 col-sm-6 mb-4 related-product-card">
-            <div className="card h-100">
+            <div className="card h-100  related-product-card-flex">
               <div className='card-imagehomecontainer '>
                 <img 
                   src={product.image ? `${process.env.REACT_APP_API_URL}/${product.image.replace('\\', '/')}` : "path_to_default_image.jpg"} 
