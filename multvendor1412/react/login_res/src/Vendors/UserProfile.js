@@ -224,7 +224,8 @@ const closeSidebar = () => {
         </div>
       </div>
     
-        <div className='col-sm-8 userinfo-container'>
+        <div className='col-sm-8 '>
+          <div className='userinfo-container'>
           <h3 className='title-vendorInfo'>User Profile</h3>
           {error && <p className="error">{error}</p>}
           <div className="form-container1">
@@ -403,7 +404,7 @@ const closeSidebar = () => {
           <img src={percentageimage1}  />
           
           </div>*/}
-      </div>
+      </div></div>
     </div>
   );
 };

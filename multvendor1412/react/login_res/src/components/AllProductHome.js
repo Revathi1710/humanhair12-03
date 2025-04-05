@@ -111,8 +111,8 @@ const AllProducts = ({ location }) => {
                 />
               </div>
            
-              <div className="card-body">
-                <Link to={`/ProductView/${product._id}`} className="card-title ellipsis2">
+              <div className="card-body home-product-card">
+                <Link to={`/ProductView/${product._id}`} className="card-title ellipsis2 home-product-title">
                   <h5 className='feacture-product-name'>{product.name}</h5>
                 </Link>
                 {product.vendorDetails ? (
@@ -138,10 +138,12 @@ const AllProducts = ({ location }) => {
                  </>  ) : (
                     <div className="companydetails mt-4 text-muted">Vendor details unavailable</div>
                   )}
+                  <div className='enquiry-btn-home-container'>
   
                   <button type="submit" name="Enquiry" className="mt-4 submit-btn" onClick={() => handleEnquiryClick(product)}>
                  Send Inquiry  &nbsp;<i class="fas fa-paper-plane"></i>
                   </button>
+                  </div>
               </div>
             </div>
           </div>

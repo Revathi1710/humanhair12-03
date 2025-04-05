@@ -106,16 +106,19 @@ const RelatedProduct = ({ categoryId, productId }) => {
     <div className="container14 mt-4">
       <div className="row">
         {products.map((product, index) => (
-          <div key={index} className="col-lg-2 col-md-4 col-sm-6 mb-4 related-product-card">
+          <div key={index} className="col-lg-2 col-md-4 col-sm-6 mb-4 ">
+            
             <div className="card h-100  related-product-card-flex">
-              <div className='card-imagehomecontainer '>
+              <div className='cd-background'>
+              <div className='cd-wrapper'>
+              <div className='card-imagerecentcontainer '>
                 <img 
                   src={product.image ? `${process.env.REACT_APP_API_URL}/${product.image.replace('\\', '/')}` : "path_to_default_image.jpg"} 
-                  className="card-img-top homeproductimage" 
+                  className="card-img-top relatedproductimage" 
                   alt={product.name || "default"}
                 />
               </div>
-              <div className="card-body">
+              <div className="card-info">
                 <Link to={`/ProductView/${product._id}`} className="card-title ellipsis2">
                   <h5 className='feacture-product-name'>{product.name}</h5>
                 </Link>
@@ -132,11 +135,13 @@ const RelatedProduct = ({ categoryId, productId }) => {
                 ) : (
                   <div className="companydetails mt-4 text-muted">Vendor details unavailable</div>
                 )}
-
-                <button type="submit" name="Enquiry" className="mt-4 submit-btn" onClick={() => handleEnquiryClick(product)}>
+               </div> </div>
+               <div className='btn-wrapper '>
+                <button type="submit" name="Enquiry" className=" submit-btn" onClick={() => handleEnquiryClick(product)}>
                   Send Inquiry  &nbsp;<i className="fas fa-paper-plane"></i>
                 </button>
-              </div>
+                </div>
+                </div>
             </div>
           </div>
         ))}

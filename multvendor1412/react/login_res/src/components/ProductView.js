@@ -5,6 +5,7 @@ import RelatedProduct from '../components/RelatedProduct';
 import MoreSellerProduct from '../components/MoreSellerProduct';
 import axios from 'axios';
 import './productview.css';
+import Footer from './Footer';
 
 const ProductView = () => {
   const { id } = useParams();
@@ -305,7 +306,9 @@ const ProductView = () => {
         </div>
       </div>*/}
      
-    </div></div>
+    </div>
+    <Footer/>
+    </div>
   );
 };
 

@@ -223,8 +223,8 @@ const Allproducts = () => {
                </ul>
              </div>
            </div>
-        <div className='col-sm-8 product-container'>
-          <div >
+        <div className='col-sm-8'>
+          <div className='product-container'>
             <h2 className='title-vendorInfo'>All Products</h2>
             <div className='total_addbtn'>
             <span>{productCount} Product</span> 

@@ -231,7 +231,8 @@ const UpdateProfileVendor = () => {
                   </ul>
                 </div>
               </div>
-        <div className='col-sm-8 businessinfo-container'>
+        <div className='col-sm-8 '>
+          <div className='businessinfo-container'>
           <h3 className='title-vendorInfo'>Business Profile</h3>
           {error && <p className="error">{error}</p>}
           <div className="form-container1">
@@ -525,7 +526,7 @@ const UpdateProfileVendor = () => {
           <img src={percentageimage1}  />
           </div>*/}
         
-      </div>
+      </div></div>
     </div>
   );
 };

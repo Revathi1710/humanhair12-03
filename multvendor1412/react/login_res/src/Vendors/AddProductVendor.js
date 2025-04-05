@@ -30,6 +30,7 @@ const AddProductVendor = () => {
     const [sellingPrice, setSellingPrice] = useState('');
     const [category, setCategory] = useState('');
     const [categories, setCategories] = useState([]);
+    
     const [subcategories, setSubCategories] = useState([]);
     const [galleryImage1, setGalleryImage1] = useState('');
     const [galleryImage2, setGalleryImage2] = useState('');
@@ -46,6 +47,12 @@ const [sidebarmenuOpen, setSidebarmenuOpen] = useState(false);
     const [message, setMessage] = useState('');
     const toggleVendorsidebar = () => {
       setSidebarmenuOpen(!sidebarmenuOpen);
+    };
+   
+    
+    // Close Sidebar
+    const closeSidebar = () => {
+      setSidebarmenuOpen(false);
     };
     useEffect(() => {
         const token = localStorage.getItem('vendortoken');
@@ -232,42 +239,89 @@ const [sidebarmenuOpen, setSidebarmenuOpen] = useState(false);
        </div>
              <div className="content row mt-4">
              
-               <div className='col-sm-3 desktop-vendor-sidebar'>
-                 <ul className='VendorList'>
-                   <li className='list'> <Link to="/Vendor/Dashboard"><i className="fas fa-home sidebaricon"></i> Dashboard</Link></li>
-                 </ul>
-                 <ul className="nano-content VendorList">
-                   <li className={`sub-menu list ${activeSubMenu === 5 ? 'active' : ''}`}>
-                     <a href="#!" onClick={() => handleSubMenuToggle(5)}>
-                       <i className="fas fa-user-alt sidebaricon"></i><span>Profile</span><i className="arrow fa fa-angle-right pull-right"></i>
-                     </a>
-                     <ul style={{ display: activeSubMenu === 5 ? 'block' : 'none' }} className='vendorsidebarmenu'>
-                       <li className='list_sidebar'><Link to="/Vendor/UserProfile" className='listsidebar'>User Profile</Link></li>
-                       <li className='list_sidebar'><Link to="/Vendor/BusinessProfile" className='listsidebar'>Business Profile</Link></li>
-                      {/* <li className='list_sidebar'><Link to="/Vendor/BankDetails" className='listsidebar'>Bank Details</Link></li>*/}
-                     </ul>
-                   </li>
-                   <li className={`sub-menu list ${activeSubMenu === 0 ? 'active' : ''}`}>
-                     <a href="#!" onClick={() => handleSubMenuToggle(0)}>
-                       <i className="fab fa-product-hunt sidebaricon"></i><span>Product</span><i className="arrow fa fa-angle-right pull-right"></i>
-                     </a>
-                     <ul style={{ display: activeSubMenu === 0 ? 'block' : 'none' }} className='vendorsidebarmenu'>
-                     <li className='list_sidebar'><Link to="/Vendor/AllProduct" className='listsidebar'>All Product</Link></li>
-                     <li className='list_sidebar'><Link to="/Vendor/AddProductVendor" className='listsidebar'>Add Product</Link></li>
-                     </ul>
-                   </li>
-                 
-                
-                   <ul className='VendorList' onClick={handleLogout}>
-                   <li className='list'><i className="fas fa-sign-out-alt sidebaricon"></i>Logout</li>
-                 </ul>
-                
-                 </ul>
-             
-               </div>
+             <div className='col-sm-3 desktop-vendor-sidebar'>
+          <ul className='VendorList'>
+            <li className='list'> <Link to="/Vendor/Dashboard"><i className="fas fa-home sidebaricon"></i> Dashboard</Link></li>
+          </ul>
+          <ul className="nano-content VendorList">
+            <li className={`sub-menu list ${activeSubMenu === 5 ? 'active' : ''}`}>
+              <a href="#!" onClick={() => handleSubMenuToggle(5)}>
+                <i className="fas fa-user-alt sidebaricon"></i><span>Profile</span><i className="arrow fa fa-angle-right pull-right"></i>
+              </a>
+              <ul style={{ display: activeSubMenu === 5 ? 'block' : 'none' }} className='vendorsidebarmenu'>
+                <li className='list_sidebar'><Link to="/Vendor/UserProfile" className='listsidebar'>User Profile</Link></li>
+                <li className='list_sidebar'><Link to="/Vendor/BusinessProfile" className='listsidebar'>Business Profile</Link></li>
+               {/* <li className='list_sidebar'><Link to="/Vendor/BankDetails" className='listsidebar'>Bank Details</Link></li>*/}
+              </ul>
+            </li>
+            <li className={`sub-menu list ${activeSubMenu === 0 ? 'active' : ''}`}>
+              <a href="#!" onClick={() => handleSubMenuToggle(0)}>
+                <i className="fab fa-product-hunt sidebaricon"></i><span>Product</span><i className="arrow fa fa-angle-right pull-right"></i>
+              </a>
+              <ul style={{ display: activeSubMenu === 0 ? 'block' : 'none' }} className='vendorsidebarmenu'>
+              <li className='list_sidebar'><Link to="/Vendor/AllProduct" className='listsidebar'>All Product</Link></li>
+              <li className='list_sidebar'><Link to="/Vendor/AddProductVendor" className='listsidebar'>Add Product</Link></li>
+              </ul>
+            </li>
+          
+         
+            <ul className='VendorList' onClick={handleLogout}>
+            <li className='list'><i className="fas fa-sign-out-alt sidebaricon"></i>Logout</li>
+          </ul>
+         
+          </ul>
+      
+        </div>
+      
+
+      {/* Sidebar */}
+      <div className={`mobiles-vendor-sidebar ${sidebarmenuOpen ? "active" : ""}`}>
+        <div className="overlay">
+          <div className="text-left mobileclose-btn">
+            <button className="mt-2 closebtn" onClick={toggleVendorsidebar}>
+              <i className="fas fa-arrow-left"></i>
+            </button>
+          </div>
+          <ul className="VendorList">
+            <li className="list">
+              <Link to="/Vendor/Dashboard">
+                <i className="fas fa-home sidebaricon"></i> Dashboard
+              </Link>
+            </li>
+          </ul>
+          <ul className="nano-content VendorList">
+            <li className={`sub-menu list ${activeSubMenu === 5 ? 'active' : ''}`}>
+              <a href="#!" onClick={() => handleSubMenuToggle(5)}>
+                <i className="fas fa-user-alt sidebaricon"></i><span>Profile</span><i className="arrow fa fa-angle-right pull-right"></i>
+              </a>
+              <ul style={{ display: activeSubMenu === 5 ? 'block' : 'none' }} className='vendorsidebarmenu'>
+                <li className='list_sidebar'><Link to="/Vendor/UserProfile" className='listsidebar'>User Profile</Link></li>
+                <li className='list_sidebar'><Link to="/Vendor/BusinessProfile" className='listsidebar'>Business Profile</Link></li>
+               {/* <li className='list_sidebar'><Link to="/Vendor/BankDetails" className='listsidebar'>Bank Details</Link></li>*/}
+              </ul>
+            </li>
+            <li className={`sub-menu list ${activeSubMenu === 0 ? 'active' : ''}`}>
+              <a href="#!" onClick={() => handleSubMenuToggle(0)}>
+                <i className="fab fa-product-hunt sidebaricon"></i><span>Product</span><i className="arrow fa fa-angle-right pull-right"></i>
+              </a>
+              <ul style={{ display: activeSubMenu === 0 ? 'block' : 'none' }} className='vendorsidebarmenu'>
+              <li className='list_sidebar'><Link to="/Vendor/AllProduct" className='listsidebar'>All Product</Link></li>
+              <li className='list_sidebar'><Link to="/Vendor/AddProductVendor" className='listsidebar'>Add Product</Link></li>
+              </ul>
+            </li>
+          
+         
+            <ul className='VendorList' onClick={handleLogout}>
+            <li className='list'><i className="fas fa-sign-out-alt sidebaricon"></i>Logout</li>
+          </ul>
+         
+          </ul>
+        </div>
+      </div>
              
        
-        <div className="col-sm-8 businessinfo-container">
+        <div className="col-sm-8">
+          <div className=" businessinfo-container">
           <h1 className="title-vendorInfo">Add a New Product</h1>
                     <div className="col-sm-12 mt-2">
                        
@@ -468,6 +522,7 @@ const [sidebarmenuOpen, setSidebarmenuOpen] = useState(false);
               </div>
             </form>
           
+                    </div>
                     </div>
                 </div>
              
